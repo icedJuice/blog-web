@@ -1,65 +1,90 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        blog-web
-      </h1>
-      <h2 class="subtitle">
-        personal blog ,parts of web
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+<div>
+  <vheader/>
+
+  <div class="container">
+    <div class="list-container fl">
+      <vlist/>
+      <vlist/>
+      <vlist/>
+      <vlist/>
+      <vlist/>
+    </div>
+    <div class="func-container fr">
+      <!--个人简介-->
+      <div class="pinel">
+        <h6 class="title">关于我</h6>
+        <personalS/>
+      </div>
+      <div class="pinel">
+        <h6 class="title">我的标签</h6>
+        <p class="tag-wraper" v-for="(item, index) in tags.tags" :key="index"><vtags :text="item"/></p>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import vheader from '~/components/vheader.vue'
+import vlist from '~/components/vlist.vue'
+import personalS from '~/components/personal-s.vue'
+import vtags from '~/components/vtags.vue'
 
 export default {
   components: {
-    AppLogo
+    vheader,
+    vlist,
+    personalS,
+    vtags
+  },
+  data () {
+    return {
+      tags: {
+        tags: ['# css(9)', '# html(1)', '# js'],
+      }
+    }
   }
 }
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+  body{
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  }
+  .container{
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .list-container{
+    position: relative;
+    z-index: 1;
+    padding-right: 300px;
+    margin: 0 auto;
+  }
+  .fr{
+    width:270px;
+    position: absolute;
+    right: 0;
+    top:0;
+    z-index: 9;
+  }
+  .pinel{
+    background-color: #fff;
+    margin-bottom: 30px;
+  }
+  .pinel .title{
+    font-size: 18px;
+    line-height: 2.4;
+    color: #fff;
+    text-align: center;
+    background-color:#409EFF;
+  }
+  .tag-wraper{
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
 </style>
 

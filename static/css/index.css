@@ -1,0 +1,16 @@
+body{
+  background-color: #F7F7F7;
+}
+.arti-title{
+  font-size:32px;
+  color: #111;
+}
+.arti-text{
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+.arti-date{
+  font-size: 14px;
+  color: #757575;
+}

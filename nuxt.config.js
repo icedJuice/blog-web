@@ -10,7 +10,9 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'personal blog ,parts of web' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/css/reset.css' },
+      { rel: 'stylesheet', href: '/css/index.css' }
     ]
   },
   /*
