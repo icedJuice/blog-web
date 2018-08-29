@@ -9,7 +9,7 @@
       </div>
       <div class="item">
         <span>密码：</span>
-        <p><input type="text" v-model="password" placeholder="请输入用户名或邮箱"></p>
+        <p><input type="password" v-model="password" placeholder="请输入用户名或邮箱"></p>
       </div>
     </div>
     <div class="btn-wrap">
@@ -23,6 +23,8 @@
 
 <script type="text/ecmascript-6">
 import vheader from '~/components/vheader.vue'
+import MD5 from 'js-md5'
+import axios from 'axios'
 export default {
   name: 'login',
   components: {
@@ -37,10 +39,18 @@ export default {
   methods: {
     login: function () {
       var data = {
-        username: this.username,
-        password: ''
+        nickname: this.username,
+        password: MD5(this.password),
       }
-      // 登录
+      axios.post('http://127.0.0.1:12300/sign/sign_in',data,{
+        headers: {
+          'content-type': 'application/json',
+          'accept': 'application/json, text/javascript, */*; q=0.01'
+        }
+      })
+      .then(res => {
+        console.log(res.body)
+      })
     }
   }
 }

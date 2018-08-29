@@ -13,8 +13,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "element-ui": "^2.4.6",
-    "nuxt": "^1.0.0"
+    "js-md5": "^0.7.3",
+    "nuxt": "^1.0.0",
+    "vue-resource": "^1.5.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
