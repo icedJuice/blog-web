@@ -3,6 +3,7 @@
   <i><a href="javascript:void(0);"></a></i>
   <p>Email: Guozhi_Han@126.com</p>
   <p>weibo: 寒玉知</p>
+  <p>gitHub: <a href="https://github.com/icedJuice" target="_blank">icedJuice</a></p>
 </div>
 </template>
 
@@ -32,5 +33,8 @@ i a{
 }
 p{
   margin-bottom: 10px;
+}
+a{
+  color: inherit;
 }
 </style>
