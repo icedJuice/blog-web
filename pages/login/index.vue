@@ -42,6 +42,7 @@ export default {
         nickname: this.username,
         password: MD5(this.password),
       }
+      console.log(data)
       axios.post('http://127.0.0.1:12300/sign/sign_in',data,{
         headers: {
           'content-type': 'application/json',
@@ -49,7 +50,10 @@ export default {
         }
       })
       .then(res => {
-        console.log(res.body)
+        const data = res.body
+        if(data.status.code === 200){
+           
+        }
       })
     }
   }
