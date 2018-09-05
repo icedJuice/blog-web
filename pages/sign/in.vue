@@ -14,7 +14,7 @@
     </div>
     <div class="btn-wrap">
       <span @click="login">登录</span>
-      <span>忘记密码</span>
+      <span><nuxt-link to="./reset">忘记密码</nuxt-link></span>
     </div>
   </div>
 </div>
@@ -24,6 +24,7 @@
 <script type="text/ecmascript-6">
 import vheader from '~/components/vheader.vue'
 import MD5 from 'js-md5'
+import cookies from '../../assets/methods/cookie.js'
 import axios from 'axios'
 export default {
   name: 'login',
@@ -50,9 +51,11 @@ export default {
         }
       })
       .then(res => {
-        const data = res.body
-        if(data.status.code === 200){
-           
+        if(res.status === 200) {
+          const data = res.data
+          if(data.status.code === 200){
+
+          }
         }
       })
     }
