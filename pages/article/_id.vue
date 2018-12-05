@@ -1,26 +1,33 @@
 <template>
     <div class="container">
       <vheader></vheader>
+      <div class="arti-header"> 
+          <h1 class="title"></h1>
+          <div class="msgs">
+              <div class="tags"><span>#javascript</span><span>#css</span></div>
+              <span class="date"></span>
+          </div>
+      </div>
       <div class="article-container">
-      <pre>
+      <!-- <pre>
           <code class="javascript">
-export function JAMS__mark() {
-    if (/android/i.test(navigator.userAgent)) {
-        try {
-            window.android.JAMS__mark(params)
-        } catch (e) {
-            console.log(e)
-        }
-    } else if (/ios|iphone|ipod|pad/i.test(navigator.userAgent)) {
-        try {
-            window.webkit.messageHandlers.JAMS__mark.postMessage(params)
-        } catch (e) {
-            console.log(e)
-        }
-    }
-}
+                export function JAMS__mark() {
+                    if (/android/i.test(navigator.userAgent)) {
+                        try {
+                            window.android.JAMS__mark(params)
+                        } catch (e) {
+                            console.log(e)
+                        }
+                    } else if (/ios|iphone|ipod|pad/i.test(navigator.userAgent)) {
+                        try {
+                            window.webkit.messageHandlers.JAMS__mark.postMessage(params)
+                        } catch (e) {
+                            console.log(e)
+                        }
+                    }
+                }
           </code>
-        </pre>
+        </pre> -->
       </div>
     </div>
 </template>
@@ -28,7 +35,13 @@ export function JAMS__mark() {
 <script>
 import vheader from '~/components/vheader.vue';
 export default {
-  name: "artilist",
+  name: "artipage",
+  validate ({ params }) {
+    // Must be a number
+    console.log('11111')
+    console.log(params.id)
+    return /^\d+$/.test(params.id)
+  },
   components: {
     vheader
   },
@@ -38,7 +51,8 @@ export default {
       {src: '/highlight/inithighlight.js', defer: 'defer'}
     ]
   },
-  mounted() {
+  computed: {
+
   },
   methods: {
 
