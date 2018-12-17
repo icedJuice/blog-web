@@ -9,7 +9,7 @@
           </div>
       </div>
       <div class="article-container">
-      <!-- <pre>
+      <pre>
           <code class="javascript">
                 export function JAMS__mark() {
                     if (/android/i.test(navigator.userAgent)) {
@@ -27,7 +27,7 @@
                     }
                 }
           </code>
-        </pre> -->
+        </pre>
       </div>
     </div>
 </template>
@@ -47,8 +47,7 @@ export default {
   },
   head: {
     script:[
-      {src: '/highlight/highlight.pack.js'},
-      {src: '/highlight/inithighlight.js', defer: 'defer'}
+      {src: '/static/js/rainbow-custom.min.js', defer: 'defer'},
     ]
   },
   computed: {
