@@ -10,7 +10,7 @@
       </div>
       <div class="article-container">
       <pre>
-          <code class="javascript">
+          <code class="javascript" data-lang="javascript">
                 export function JAMS__mark() {
                     if (/android/i.test(navigator.userAgent)) {
                         try {
